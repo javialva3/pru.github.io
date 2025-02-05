@@ -1,0 +1,20 @@
+{% extends 'Base/index.html.twig' %}
+
+
+{% block body %}
+
+
+    <div class="ui grid" style="margin-left: 0 !important;">
+        <div class="four wide column" id="mover_lienzo_menu">
+            menu
+        </div>
+        <div class="twelve wide column" id="mover_lienzo_derecha">
+            
+            {% block contenido %}
+                contenido
+            {% endblock %}
+        </div>
+    </div>
+
+
+{% endblock %}

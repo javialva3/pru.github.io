@@ -1,0 +1,58 @@
+{# Declaracion tipo HTML 5 #}
+<!DOCTYPE html>
+
+{#{% spaceless %}#}
+{% set tituloPantalla =  tituloPantalla is defined ? tituloPantalla : ' ULPGC - Aplicaciones ' %}
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1.0"> {#se agrega para que se adapte a la pantalla del tlf#}
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+
+    {% block css %}
+        {#Hojas de estilo especificas del proyecto#}
+    {% endblock %}
+
+    <title>
+        {% block title %}
+            {{ tituloPantalla }}
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+
+{# Cabecera de la pagina fija #}
+{#{% include ('Base/cabecera.html.twig') %}
+{% include 'Base/regionMensajes.html.twig' %}
+{% if literales is defined %}
+    {% include 'Comun/modales.html.twig'  with { 'literales': literales} %}
+{% endif %}
+{% include 'Comun/spinners.html.twig' %}
+#}
+<div class="contenido">
+
+    <section id="contenidoSeccion" role="main">
+        <div class="lienzo-aplicacion">
+            <div class="pantalla-proyecto">
+                {% if titulo is defined and titulo != "" %}
+                    <h1 class="tituloPantalla">{{ titulo }}</h1>
+                {% endif %}
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </section>
+
+</div> {# Div Base #}
+
+{% block js %}
+{% endblock %}
+
+
+</body>
+</html>
+{#{% endspaceless %}#}
