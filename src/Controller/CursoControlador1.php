@@ -37,11 +37,13 @@ class CursoControlador1 extends AbstractController
         }
         else
         {
-            $titulo = 'Todos los géneros';
+            $titulo = 'Todos los géneros'; 
         }
         
         
         return new Response($titulo);
+        
+        
     }
 }
 
